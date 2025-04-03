@@ -6,6 +6,8 @@ import os
 import sys
 import altair as alt
 import streamlit.components.v1 as components
+current_dir = os.path.dirname(__file__)
+image_path = os.path.join(current_dir, "image_voiture-removebg.png")
 
 st.set_page_config(
     page_title="Véhicules électriques",
@@ -149,7 +151,7 @@ if page == "🏁 Présentation du projet":
         """, unsafe_allow_html=True)
         
         with col2:
-            st.image("image_voiture-removebg.png", width=900)
+            st.image(image_path, width=900)
 
 elif page == "🚗 Voitures électriques":
     st.title("🚗 Voitures électriques")
