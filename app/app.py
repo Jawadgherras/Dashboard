@@ -6,6 +6,7 @@ import os
 import sys
 import altair as alt
 import streamlit.components.v1 as components
+
 current_dir = os.path.dirname(__file__)
 image_path = os.path.join(current_dir, "image_voiture-removebg.png")
 
@@ -1051,11 +1052,74 @@ elif page == "⚡Vehicules par borne":
             with open(carte_dep_path, 'r', encoding='utf-8') as f:
                 carte_dep_html = f.read()
             components.html(carte_dep_html, height=450, width=500)
-        
-        col_choix1, col_choix2, col_choix3 = st.columns(3)
-        with col_choix2:
             
+        col_buttonvpb, col_buttonvpb, col_buttonvpb = st.columns(3)
+        with col_buttonvpb:
             st.markdown("""
+    <style>
+    /* Style du bouton sélectionné */
+    div[data-testid="stRadio"] > div > label[data-selected="true"] {
+        background-color: #7e57c2 !important;  /* Violet */
+        color: white !important;
+        border-radius: 8px;
+    }
+
+    /* Cercle intérieur (radio button) du bouton sélectionné */
+    div[data-testid="stRadio"] > div > label[data-selected="true"] span[data-baseweb="radio"] > div:first-child {
+        background-color: white !important;  /* Cercle externe */
+        border: 2px solid white !important;
+    }
+    div[data-testid="stRadio"] > div > label[data-selected="true"] span[data-baseweb="radio"] > div:first-child > div {
+        background-color: #7e57c2 !important;  /* Cercle violet interne */
+    }
+
+    /* Style général des boutons */
+    div[data-testid="stRadio"] > div > label {
+        border: 1px solid #7e57c2 !important;
+        border-radius: 8px;
+        padding: 6px 12px;
+        margin-right: 6px;
+        color: #cfcfcf;
+        transition: all 0.2s ease-in-out;
+    }
+
+    /* Effet au survol */
+    div[data-testid="stRadio"] > div > label:hover {
+        background-color: #9575cd22;
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
+        choix_classement_vpb = st.radio(
+        "📊 Afficher les départements et régions par nombre de véhicules par borne :", 
+        ["Top 10", "Bottom 10"], 
+        horizontal=True
+    )
+
+    col_regions_vpb, col_departements_vpb = st.columns(2)
+
+    with col_regions_vpb:
+        if choix_classement_vpb == "Top 10":
+            fig_regions_vpb = barplot_top_regions_vpb(df_ve_b, annee_selectionnee)
+        else:
+            fig_regions_vpb = barplot_flop_regions_vpb(df_ve_b, annee_selectionnee)
+
+        st.plotly_chart(fig_regions_vpb, use_container_width=True, key="barplot_regions_vpb")
+
+    with col_departements_vpb:
+        if choix_classement_vpb == "Top 10":
+            fig_departements_vpb = barplot_top_departements_vpb(df_ve_b, annee_selectionnee)
+        else:
+            fig_departements_vpb = barplot_flop_departements_vpb(df_ve_b, annee_selectionnee)
+
+        st.plotly_chart(fig_departements_vpb, use_container_width=True, key="barplot_departements_vpb")
+
+        
+        
+    col_choix1, col_choix2, col_choix3 = st.columns(3)
+    with col_choix2:
+            
+        st.markdown("""
     <style>
     /* Style du bouton sélectionné */
     div[data-testid="stRadio"] > div > label[data-selected="true"] {
@@ -1092,35 +1156,38 @@ elif page == "⚡Vehicules par borne":
 """, unsafe_allow_html=True)
 
 
-            choix_graphe_vpb = st.radio(
+        choix_graphe_vpb = st.radio(
                         "📈 Sélectionnez la zone d'évolution :",
                         ["France", "Région", "Département"],
                         horizontal=True
                     )   
-        col_evol_vpb,col_base100 = st.columns(2)
-        with col_base100:
-            st.markdown("### Évolution des véhicules par borne (base 100)")
-            if choix_graphe_vpb == "France":
-                fig = graphique_evolution_base100_fr(df_ve_b, df_ve_b_r)
-                st.plotly_chart(fig, use_container_width=True, key="evol_france_vpb_base100")
-            elif choix_graphe_vpb == "Région":
-                fig = graphique_evolution_base100_reg(df, df_2,region_selectionnee)
-                st.plotly_chart(fig, use_container_width=True, key="evol_reg_vpb_base100")
-            elif choix_graphe_vpb == "Département":
-                fig = graphique_evolution_base100_dep(df, df_2, departement_selectionne)
-                st.plotly_chart(fig, use_container_width=True, key="evol_dep_vpb_base100")
+    col_evol_vpb, col_base100 = st.columns(2)
+
+    with col_base100:
+        st.markdown("### Évolution des véhicules par borne (base 100)")
+        if choix_graphe_vpb == "France":
+            fig = graphique_evolution_base100_fr(df_ve_b, df_ve_b_r)
+            st.plotly_chart(fig, use_container_width=True, key="evol_france_vpb_base100")
+        elif choix_graphe_vpb == "Région":
+            fig = graphique_evolution_base100_reg(df, df_2, region_selectionnee)
+            st.plotly_chart(fig, use_container_width=True, key="evol_reg_vpb_base100")
+        elif choix_graphe_vpb == "Département":
+            fig = graphique_evolution_base100_dep(df, df_2, departement_selectionne)
+            st.plotly_chart(fig, use_container_width=True, key="evol_dep_vpb_base100")
+
+    with col_evol_vpb:
+        st.markdown("### Évolution des véhicules par borne")
+        if choix_graphe_vpb == "France":
+            fig = graphique_evolution_france_vpb(df_ve_b)
+            st.plotly_chart(fig, use_container_width=True, key="evol_france_vpb")
+        elif choix_graphe_vpb == "Région":
+            fig = graphique_evolution_vpb_region(df_ve_b, region_selectionnee)
+            st.plotly_chart(fig, use_container_width=True, key="evol_reg_vpb")
+        elif choix_graphe_vpb == "Département":
+            fig = graphique_evolution_vpb_dep(df_ve_b, departement_selectionne)
+            st.plotly_chart(fig, use_container_width=True, key="evol_dep_vpb")
+
         
-        with col_evol_vpb:
-            st.markdown("### Évolution des véhicules par borne")
-            if choix_graphe_vpb == "France":
-                fig = graphique_evolution_france_vpb(df_ve_b)
-                st.plotly_chart(fig, use_container_width=True, key="evol_france_vpb")
-            elif choix_graphe_vpb == "Région":
-                fig = graphique_evolution_vpb_region(df_ve_b,region_selectionnee)
-                st.plotly_chart(fig, use_container_width=True, key="evol_reg_vpb")
-            elif choix_graphe_vpb == "Département":
-                fig = graphique_evolution_vpb_dep(df_ve_b, departement_selectionne)
-                st.plotly_chart(fig, use_container_width=True, key="evol_dep_vpb")
                 
 elif page == "📈 Objectifs 2030":
     st.title("📈 Objectifs gouvernementaux pour 2030 vs Réalité actuelle")
