@@ -1,0 +1,95 @@
+nom_departement,TMJA,nom_region
+Seine-Saint-Denis,136675.44,Île-de-France
+Val-de-Marne,113175.55555555556,Île-de-France
+Val-d'Oise,87498.74074074074,Île-de-France
+Hauts-de-Seine,73716.25,Île-de-France
+Bouches-du-Rhône,67540.25974025975,Provence-Alpes-Côte d'Azur
+Essonne,64850.619047619046,Île-de-France
+Alpes-Maritimes,64113.230769230766,Provence-Alpes-Côte d'Azur
+Bas-Rhin,60378.5504587156,Grand Est
+Loire-Atlantique,57221.28767123288,Pays de la Loire
+Gironde,56157.6129032258,Nouvelle-Aquitaine
+Haute-Garonne,53704.42857142857,Occitanie
+Ille-et-Vilaine,52015.43333333333,Bretagne
+Yvelines,51830.625,Île-de-France
+Meurthe-et-Moselle,49185.69230769231,Grand Est
+Aude,48716.27272727273,Occitanie
+Tarn-et-Garonne,46349.69230769231,Occitanie
+Morbihan,45163.125,Bretagne
+Var,44751.944444444445,Provence-Alpes-Côte d'Azur
+Seine-et-Marne,43747.33707865168,Île-de-France
+Moselle,42402.01612903226,Grand Est
+Oise,42310.0,Hauts-de-France
+Rhône,42225.58260869565,Auvergne-Rhône-Alpes
+Paris,41672.0,Île-de-France
+Hérault,38399.03571428572,Occitanie
+Isère,36819.48387096774,Auvergne-Rhône-Alpes
+Côte-d'Or,36131.07407407407,Bourgogne-Franche-Comté
+Puy-de-Dôme,36121.833333333336,Auvergne-Rhône-Alpes
+Calvados,35779.38888888889,Normandie
+Loire,35487.530303030304,Auvergne-Rhône-Alpes
+Maine-et-Loire,35169.694444444445,Pays de la Loire
+Savoie,34718.017857142855,Auvergne-Rhône-Alpes
+Ain,33590.30952380953,Auvergne-Rhône-Alpes
+Haute-Savoie,33428.44,Auvergne-Rhône-Alpes
+Côtes-d'Armor,32745.272727272728,Bretagne
+Haut-Rhin,31982.533333333333,Grand Est
+Eure-et-Loir,31604.106666666667,Centre-Val de Loire
+Gard,29390.14285714286,Occitanie
+Finistère,25727.13793103448,Bretagne
+Seine-Maritime,25435.714285714286,Normandie
+Haute-Vienne,25147.625,Nouvelle-Aquitaine
+Pas-de-Calais,23824.03448275862,Hauts-de-France
+Charente-Maritime,23352.846153846152,Nouvelle-Aquitaine
+Corrèze,23310.571428571428,Nouvelle-Aquitaine
+Somme,23103.166666666668,Hauts-de-France
+Vaucluse,23040.777777777777,Provence-Alpes-Côte d'Azur
+Indre,22896.545454545456,Centre-Val de Loire
+Indre-et-Loire,22362.53846153846,Centre-Val de Loire
+Eure,21956.378787878788,Normandie
+Nord,21715.75,Hauts-de-France
+Loiret,21702.82608695652,Centre-Val de Loire
+Landes,21435.91304347826,Nouvelle-Aquitaine
+Territoire de Belfort,21268.11363636364,Bourgogne-Franche-Comté
+Manche,21190.20588235294,Normandie
+Aisne,21064.58333333333,Hauts-de-France
+Saône-et-Loire,20911.19607843137,Bourgogne-Franche-Comté
+Sarthe,20683.05,Pays de la Loire
+Cher,19941.125,Centre-Val de Loire
+Drôme,19800.380116959062,Auvergne-Rhône-Alpes
+Hautes-Pyrénées,19493.0,Occitanie
+Charente,19481.74358974359,Nouvelle-Aquitaine
+Vienne,19337.70833333333,Nouvelle-Aquitaine
+Marne,19169.866666666665,Grand Est
+Doubs,19108.114285714284,Bourgogne-Franche-Comté
+Vendée,19082.846153846152,Pays de la Loire
+Tarn,18561.75,Occitanie
+Deux-Sèvres,17118.217391304348,Nouvelle-Aquitaine
+Loir-et-Cher,16305.96,Centre-Val de Loire
+Aube,15852.636363636364,Grand Est
+Lot,15592.857142857143,Occitanie
+Pyrénées-Atlantiques,14849.17543859649,Nouvelle-Aquitaine
+Yonne,14403.186046511628,Bourgogne-Franche-Comté
+Creuse,13575.636363636364,Nouvelle-Aquitaine
+Dordogne,12844.5,Nouvelle-Aquitaine
+Aveyron,12808.326086956522,Occitanie
+Vosges,12366.0,Grand Est
+Haute-Marne,12322.184210526317,Grand Est
+Ariège,12251.227272727272,Occitanie
+Nièvre,12205.166666666666,Bourgogne-Franche-Comté
+Meuse,12053.111111111111,Grand Est
+Jura,11986.0,Bourgogne-Franche-Comté
+Allier,11773.79411764706,Auvergne-Rhône-Alpes
+Mayenne,11760.806451612903,Pays de la Loire
+Haute-Saône,11268.24,Bourgogne-Franche-Comté
+Ardèche,11141.07142857143,Auvergne-Rhône-Alpes
+Gers,10344.17857142857,Occitanie
+Haute-Loire,10279.75,Auvergne-Rhône-Alpes
+Hautes-Alpes,10054.46,Provence-Alpes-Côte d'Azur
+Lot-et-Garonne,9466.125,Nouvelle-Aquitaine
+Orne,8071.846153846154,Normandie
+Cantal,8047.285714285715,Auvergne-Rhône-Alpes
+Pyrénées-Orientales,7136.590361445783,Occitanie
+Alpes-de-Haute-Provence,6236.038461538462,Provence-Alpes-Côte d'Azur
+Lozère,6040.257142857143,Occitanie
+Ardennes,,Grand Est
