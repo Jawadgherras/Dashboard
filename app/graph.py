@@ -895,7 +895,7 @@ def barplot_top_regions_ve(df, annee_selectionnee):
     fig = px.bar(
         top_regions,
         x='Nombre de véhicules électriques',
-        y='Région',
+        y='',
         orientation='h',
         text_auto=True,
         title=f"Top 10 régions par nombre de véhicules électriques ({annee_selectionnee})",
@@ -925,7 +925,7 @@ def barplot_bottom_regions_ve(df, annee_selectionnee):
     fig = px.bar(
         bottom_regions,
         x='Nombre de véhicules électriques',
-        y='Région',
+        y='',
         orientation='h',
         text_auto=True,
         title=f"Top 10 régions avec le moins de véhicules électriques ({annee_selectionnee})",
@@ -955,7 +955,7 @@ def barplot_bottom_departements_ve(df, annee_selectionnee):
     fig = px.bar(
         bottom_departements,
         x='Nombre de véhicules électriques',
-        y='Département',
+        y='',
         orientation='h',
         text_auto=True,
         title=f"Top 10 départements avec le moins de véhicules électriques ({annee_selectionnee})",
@@ -986,7 +986,7 @@ def barplot_top_departements_ve(df, annee_selectionnee):
     fig = px.bar(
         top_departements,
         x='Nombre de véhicules électriques',
-        y='Département',
+        y='',
         orientation='h',
         text_auto=True,
         title=f"Top 10 départements avec le plus de véhicules électriques ({annee_selectionnee})",
