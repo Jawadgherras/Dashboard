@@ -129,7 +129,7 @@ def graphique_interactif_dep(df, annee, departement):
     fig.update_layout(
         height=170,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#7e57c2'
+        paper_bgcolor='#6940B0'
     )
 
     return fig
@@ -173,7 +173,7 @@ def graphique_interactif_region(df, annee, region):
     fig.update_layout(
         height=170,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#673ab7'
+        paper_bgcolor='#5A2A9F'
     )
 
     return fig
@@ -218,7 +218,7 @@ def graphique_bornes_dep(df_2, departement, annee):
     fig.update_layout(
         height=150,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#7e57c2'
+        paper_bgcolor='#6940B0'
     )
 
     return fig
@@ -264,7 +264,7 @@ def vignette_borne_instal_reg(df_2, region, annee):
     fig.update_layout(
         height=150,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#673ab7'
+        paper_bgcolor='#5A2A9F'
     )
 
     return fig
@@ -403,7 +403,7 @@ def graphique_bornes_region_1(df_2, region, annee):
     fig.update_layout(
         height=150,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#673ab7'
+        paper_bgcolor='#5A2A9F'
     )
 
     return fig
@@ -455,7 +455,7 @@ def graphique_bornes_dep_1(df_2, departement, annee):
     fig.update_layout(
         height=150,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#7e57c2'
+        paper_bgcolor='#6940B0'
     )
 
     return fig
@@ -483,7 +483,7 @@ def graphique_tmja_dep(df_tmja_d, departement):
     fig.update_layout(
         height=150,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#7e57c2'
+        paper_bgcolor='#6940B0'
     )
 
     return fig
@@ -507,7 +507,7 @@ def graphique_tmja_region(df_tmja_r, region):
     fig.update_layout(
         height=150,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#673ab7'
+        paper_bgcolor='#5A2A9F'
     )
     return fig
 
@@ -540,7 +540,7 @@ def barplot_tmja_region(df_tmja_r):
         df_tmja_top10,
         y="nom_region",
         x="TMJA",
-        title="Top 10 Régions par TMJA",
+        title="🏆Top 10 Régions par TMJA",
         labels={"nom_region": "Région", "TMJA": "Trafic Moyen Journalier Annuel"},
         text="TMJA",
         orientation="h",
@@ -570,12 +570,12 @@ def barplot_tmja_dep(df_tmja_d):
         df_tmja_top10,
         y="nom_departement",
         x="TMJA",
-        title="Top 10 Départements par TMJA",
+        title="🏆Top 10 Départements par TMJA",
         labels={"nom_departement": "Département", "TMJA": "Trafic Moyen Journalier Annuel"},
         text="TMJA",
         orientation="h",
         category_orders={"nom_departement": df_tmja_top10["nom_departement"].tolist()[::-1]},
-        color_discrete_sequence=["#9575cd "]
+        color_discrete_sequence=["#7044BB "]
     )
 
     # Mise en page personnalisée
@@ -672,7 +672,7 @@ def vignette_el_b_dep(df_ve_b, annee, departement):
     fig.update_layout(
         height=170,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#7e57c2'
+        paper_bgcolor='#6940B0'
     )
 
     return fig
@@ -716,7 +716,7 @@ def vignette_el_b_reg(df_ve_b_r, annee, region):
     fig.update_layout(
         height=170,
         margin=dict(l=10, r=10, t=10, b=10),
-        paper_bgcolor='#673ab7'
+        paper_bgcolor='#5A2A9F'
     )
 
     return fig
@@ -890,7 +890,7 @@ def barplot_top_regions_ve(df, annee_selectionnee):
         .head(10)
     )
 
-    top_regions = top_regions.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'region': 'Région'})
+    top_regions = top_regions.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'region': ''})
 
     fig = px.bar(
         top_regions,
@@ -898,7 +898,7 @@ def barplot_top_regions_ve(df, annee_selectionnee):
         y='',
         orientation='h',
         text_auto=True,
-        title=f"Top 10 régions par nombre de véhicules électriques ({annee_selectionnee})",
+        title=f"🏆Top 10 régions par nombre de véhicules électriques ({annee_selectionnee})",
         color_discrete_sequence=["#4a148c"]
     )
 
@@ -920,7 +920,7 @@ def barplot_bottom_regions_ve(df, annee_selectionnee):
         .head(10)
     )
 
-    bottom_regions = bottom_regions.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'region': 'Région'})
+    bottom_regions = bottom_regions.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'region': ''})
 
     fig = px.bar(
         bottom_regions,
@@ -928,7 +928,7 @@ def barplot_bottom_regions_ve(df, annee_selectionnee):
         y='',
         orientation='h',
         text_auto=True,
-        title=f"Top 10 régions avec le moins de véhicules électriques ({annee_selectionnee})",
+        title=f"🏆Top 10 régions avec le moins de véhicules électriques ({annee_selectionnee})",
         color_discrete_sequence=["#4a148c"]
     )
 
@@ -950,7 +950,7 @@ def barplot_bottom_departements_ve(df, annee_selectionnee):
         .head(10)
     )
 
-    bottom_departements = bottom_departements.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'departement': 'Département'})
+    bottom_departements = bottom_departements.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'departement': ''})
 
     fig = px.bar(
         bottom_departements,
@@ -958,8 +958,8 @@ def barplot_bottom_departements_ve(df, annee_selectionnee):
         y='',
         orientation='h',
         text_auto=True,
-        title=f"Top 10 départements avec le moins de véhicules électriques ({annee_selectionnee})",
-        color_discrete_sequence=["#9575cd"]
+        title=f"🏆Top 10 départements avec le moins de véhicules électriques ({annee_selectionnee})",
+        color_discrete_sequence=["#7044BB"]
     )
 
     fig.update_layout(
@@ -981,7 +981,7 @@ def barplot_top_departements_ve(df, annee_selectionnee):
         .head(10)
     )
 
-    top_departements = top_departements.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'departement': 'Département'})
+    top_departements = top_departements.rename(columns={'NB_VP_RECHARGEABLES_EL': 'Nombre de véhicules électriques', 'departement': ''})
 
     fig = px.bar(
         top_departements,
@@ -989,8 +989,8 @@ def barplot_top_departements_ve(df, annee_selectionnee):
         y='',
         orientation='h',
         text_auto=True,
-        title=f"Top 10 départements avec le plus de véhicules électriques ({annee_selectionnee})",
-        color_discrete_sequence=["#9575cd"]
+        title=f"🏆Top 10 départements avec le plus de véhicules électriques ({annee_selectionnee})",
+        color_discrete_sequence=["#7044BB"]
     )
 
     fig.update_layout(
@@ -1011,10 +1011,10 @@ def barplot_bornes_regions(df_2, choix_classement, annee_selectionnee_b):
     # Trier les régions en fonction du choix (Top 10 ou Flop 10)
     if choix_classement == "Top 10":
         top_regions_bornes = top_regions_bornes.sort_values(by='nb_borne', ascending=False).head(10)
-        titre = f"Top 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🏆Top 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
     else:
         top_regions_bornes = top_regions_bornes.sort_values(by='nb_borne', ascending=True).head(10)
-        titre = f"Flop 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🚨Bottom 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
 
     # Créer le barplot avec Plotly Express
     fig = px.bar(
@@ -1044,10 +1044,10 @@ def barplot_bornes_departements(df_2, choix_classement, annee_selectionnee_b):
     # Trier les départements en fonction du choix (Top 10 ou Flop 10)
     if choix_classement == "Top 10":
         top_departements_bornes = top_departements_bornes.sort_values(by='nb_borne', ascending=False).head(10)
-        titre = f"Top 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🏆Top 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
     else:
         top_departements_bornes = top_departements_bornes.sort_values(by='nb_borne', ascending=True).head(10)
-        titre = f"Flop 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🚨Bottom 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
 
     # Créer le barplot avec Plotly Express
     fig = px.bar(
@@ -1058,7 +1058,7 @@ def barplot_bornes_departements(df_2, choix_classement, annee_selectionnee_b):
         text_auto=True,
         title=titre,
         labels={'nom_departement': 'Département', 'nb_borne': 'Nombre de bornes de recharge'},
-        color_discrete_sequence=["#9575cd "]
+        color_discrete_sequence=["#7044BB "]
     )
 
     # Mise en page du graphique
@@ -1125,10 +1125,10 @@ def barplot_bornes_regions_tot(df_2, choix_classement, annee_selectionnee_b):
     # Trier les régions en fonction du choix (Top 10 ou Flop 10)
     if choix_classement == "Top 10":
         top_regions_bornes = top_regions_bornes.sort_values(by='nb_borne', ascending=False).head(10)
-        titre = f"Top 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🏆Top 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
     else:
         top_regions_bornes = top_regions_bornes.sort_values(by='nb_borne', ascending=True).head(10)
-        titre = f"Flop 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🚨Bottom 10 régions par nombre de bornes de recharge ({annee_selectionnee_b})"
 
     # Créer le barplot avec Plotly Express
     fig = px.bar(
@@ -1138,7 +1138,7 @@ def barplot_bornes_regions_tot(df_2, choix_classement, annee_selectionnee_b):
         orientation='h',
         text_auto=True,
         title=titre,
-        labels={'nom_region': 'Région', 'nb_borne': 'Nombre de bornes de recharge'},
+        labels={'nom_region': '', 'nb_borne': 'Nombre de bornes de recharge'},
         color_discrete_sequence=["#4a148c"]
     )
 
@@ -1158,10 +1158,10 @@ def barplot_bornes_departements_tot(df_2, choix_classement, annee_selectionnee_b
     # Trier les départements en fonction du choix (Top 10 ou Flop 10)
     if choix_classement == "Top 10":
         top_departements_bornes = top_departements_bornes.sort_values(by='nb_borne', ascending=False).head(10)
-        titre = f"Top 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🏆Top 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
     else:
         top_departements_bornes = top_departements_bornes.sort_values(by='nb_borne', ascending=True).head(10)
-        titre = f"Flop 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
+        titre = f"🚨Bottom 10 départements par nombre de bornes de recharge ({annee_selectionnee_b})"
 
     # Créer le barplot avec Plotly Express
     fig = px.bar(
@@ -1171,8 +1171,8 @@ def barplot_bornes_departements_tot(df_2, choix_classement, annee_selectionnee_b
         orientation='h',
         text_auto=True,
         title=titre,
-        labels={'nom_departement': 'Département', 'nb_borne': 'Nombre de bornes de recharge'},
-        color_discrete_sequence=["#9575cd "]
+        labels={'nom_departement': '', 'nb_borne': 'Nombre de bornes de recharge'},
+        color_discrete_sequence=["#7044BB "]
     )
 
     fig.update_layout(template='simple_white', yaxis=dict(autorange="reversed"))
@@ -1755,3 +1755,132 @@ def graphique_evolution_vpb_dep_pred(df_ve_b, departement):
 
     return fig
 
+def barplot_top_regions_vpb(df_ve_b, annee_selectionnee):
+    top_regions = (
+        df_ve_b[df_ve_b['Annee'] == annee_selectionnee]
+        .groupby('nom_region')['nb_el/borne']
+        .mean()
+        .reset_index()
+        .sort_values(by='nb_el/borne', ascending=True)  # Moins = mieux
+        .head(10)
+    )
+
+    
+    
+    top_regions = top_regions.rename(columns={'nom_region': '', 'nb_el/borne': 'Véhicules par borne'})
+    top_regions['Véhicules par borne'] = top_regions['Véhicules par borne'].round(1)
+    
+
+
+    fig = px.bar(
+        top_regions,
+        x='Véhicules par borne',
+        y='',
+        orientation='h',
+        text='Véhicules par borne',
+        title=f"🏆 Top 10 Régions - Moins de véhicules par borne ({annee_selectionnee})",
+        color_discrete_sequence=["#4a148c"]
+    )
+
+    fig.update_layout(
+        yaxis=dict(autorange="reversed"),
+        template='simple_white',
+        height=500
+    )
+
+    return fig
+
+def barplot_flop_regions_vpb(df_ve_b, annee_selectionnee):
+    flop_regions = (
+        df_ve_b[df_ve_b['Annee'] == annee_selectionnee]
+        .groupby('nom_region')['nb_el/borne']
+        .mean()
+        .reset_index()
+        .sort_values(by='nb_el/borne', ascending=False)
+        .head(10)
+    )
+
+    flop_regions = flop_regions.rename(columns={'nom_region': '', 'nb_el/borne': 'Véhicules par borne'})
+    flop_regions['Véhicules par borne'] = flop_regions['Véhicules par borne'].round(1)
+
+    fig = px.bar(
+        flop_regions,
+        x='Véhicules par borne',
+        y='',
+        orientation='h',
+        text='Véhicules par borne',
+        title=f"🚨 Bottom 10 Régions - Plus de véhicules par borne ({annee_selectionnee})",
+        color_discrete_sequence=["#4a148c"]
+    )
+
+    fig.update_layout(
+        yaxis=dict(autorange="reversed"),
+        template='simple_white',
+        height=500
+    )
+
+    return fig
+
+def barplot_top_departements_vpb(df_ve_b, annee_selectionnee):
+    top_deps = (
+        df_ve_b[df_ve_b['Annee'] == annee_selectionnee]
+        .groupby('nom_departement')['nb_el/borne']
+        .mean()
+        .reset_index()
+        .sort_values(by='nb_el/borne', ascending=True)
+        .head(10)
+    )
+
+    top_deps = top_deps.rename(columns={'nom_departement': '', 'nb_el/borne': 'Véhicules par borne'})
+    top_deps['Véhicules par borne'] = top_deps['Véhicules par borne'].round(1)
+
+
+    fig = px.bar(
+        top_deps,
+        x='Véhicules par borne',
+        y='',
+        orientation='h',
+        text='Véhicules par borne',
+        title=f"🏆 Top 10 Départements - Moins de véhicules par borne ({annee_selectionnee})",
+        color_discrete_sequence=["#6940B0"]
+    )
+
+    fig.update_layout(
+        yaxis=dict(autorange="reversed"),
+        template='simple_white',
+        height=500
+    )
+
+    return fig
+
+def barplot_flop_departements_vpb(df_ve_b, annee_selectionnee):
+    flop_deps = (
+        df_ve_b[df_ve_b['Annee'] == annee_selectionnee]
+        .groupby('nom_departement')['nb_el/borne']
+        .mean()
+        .reset_index()
+        .sort_values(by='nb_el/borne', ascending=False)
+        .head(10)
+    )
+
+
+    flop_deps = flop_deps.rename(columns={'nom_departement': '', 'nb_el/borne': 'Véhicules par borne'})
+    flop_deps['Véhicules par borne'] = flop_deps['Véhicules par borne'].round(1)
+
+    fig = px.bar(
+        flop_deps,
+        x='Véhicules par borne',
+        y='',
+        orientation='h',
+        text='Véhicules par borne',
+        title=f"🚨 Bottom 10 Départements - Plus de véhicules par borne ({annee_selectionnee})",
+        color_discrete_sequence=["#6940B0"]
+    )
+
+    fig.update_layout(
+        yaxis=dict(autorange="reversed"),
+        template='simple_white',
+        height=500
+    )
+
+    return fig
