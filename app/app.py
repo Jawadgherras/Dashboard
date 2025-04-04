@@ -1166,7 +1166,7 @@ elif page == "⚡Vehicules par borne":
     col_evol_vpb, col_base100 = st.columns(2)
 
     with col_base100:
-        st.markdown("### Évolution des véhicules par borne (base 100)")
+        st.markdown("")
         if choix_graphe_vpb == "France":
             fig = graphique_evolution_base100_fr(df_ve_b, df_ve_b_r)
             st.plotly_chart(fig, use_container_width=True, key="evol_france_vpb_base100")
@@ -1178,7 +1178,7 @@ elif page == "⚡Vehicules par borne":
             st.plotly_chart(fig, use_container_width=True, key="evol_dep_vpb_base100")
 
     with col_evol_vpb:
-        st.markdown("### Évolution des véhicules par borne")
+        st.markdown("")
         if choix_graphe_vpb == "France":
             fig = graphique_evolution_france_vpb(df_ve_b)
             st.plotly_chart(fig, use_container_width=True, key="evol_france_vpb")
