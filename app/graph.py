@@ -536,13 +536,17 @@ def barplot_tmja_region(df_tmja_r):
     # Garder uniquement le top 10 régions avec TMJA le plus élevé
     df_tmja_top10 = df_tmja_region.sort_values(by="TMJA", ascending=False).head(10)
 
+    # Formater les valeurs de TMJA en 'xxx.xxxk'
+    df_tmja_top10["TMJA_text"] = (df_tmja_top10["TMJA"] / 1000).round(3).astype(str) + "k"
+
+    # Création du barplot
     fig = px.bar(
         df_tmja_top10,
         y="nom_region",
         x="TMJA",
-        title="🏆Top 10 Régions par TMJA",
+        title="🏆 Top 10 Régions par TMJA",
         labels={"nom_region": "Région", "TMJA": "Trafic Moyen Journalier Annuel"},
-        text="TMJA",
+        text="TMJA_text",  # Texte affiché sur les barres
         orientation="h",
         category_orders={"nom_region": df_tmja_top10["nom_region"].tolist()[::-1]},
         color_discrete_sequence=["#4a148c"]
@@ -553,9 +557,11 @@ def barplot_tmja_region(df_tmja_r):
         xaxis_title="TMJA",
         yaxis_title="",
         template='simple_white',
+        height=500
     )
 
     return fig
+
 
 
 
@@ -566,16 +572,19 @@ def barplot_tmja_dep(df_tmja_d):
     # Garder uniquement le top 10 départements avec TMJA le plus élevé
     df_tmja_top10 = df_tmja_dep.sort_values(by="TMJA", ascending=False).head(10)
 
+    # Ajouter une colonne texte formatée pour les annotations
+    df_tmja_top10["TMJA_text"] = (df_tmja_top10["TMJA"] / 1000).round(3).astype(str) + "k"
+
     fig = px.bar(
         df_tmja_top10,
         y="nom_departement",
         x="TMJA",
-        title="🏆Top 10 Départements par TMJA",
+        title="🏆 Top 10 Départements par TMJA",
         labels={"nom_departement": "Département", "TMJA": "Trafic Moyen Journalier Annuel"},
-        text="TMJA",
+        text="TMJA_text",  # Utilise la colonne formatée
         orientation="h",
         category_orders={"nom_departement": df_tmja_top10["nom_departement"].tolist()[::-1]},
-        color_discrete_sequence=["#7044BB "]
+        color_discrete_sequence=["#7044BB"]
     )
 
     # Mise en page personnalisée
@@ -583,9 +592,11 @@ def barplot_tmja_dep(df_tmja_d):
         xaxis_title="TMJA",
         yaxis_title="",
         template='simple_white',
+        height=500
     )
 
     return fig
+
 
 
 def vignette_el_b_fr(df_ve_b, annee):
@@ -763,7 +774,7 @@ def graphique_evolution_base100_fr(df_vehicules, df_bornes):
 
     fig.update_layout(
         title={
-            'text': "Évolution comparée des véhicules et bornes électriques en France",
+            'text': "Évolutio comparée (base 100) des véhicules et bornes électriques en France",
             'font': {'size': 15}
         },
         xaxis_title="",
@@ -817,7 +828,7 @@ def graphique_evolution_base100_reg(df_vehicules, df_bornes, region_selectionnee
 
     fig.update_layout(
         title={
-            'text': f"Évolution comparée des véhicules et bornes électriques en {region_selectionnee}",
+            'text': f"Évolution comparée (base 100) des véhicules et bornes électriques en {region_selectionnee}",
             'font': {'size': 15}
         },
         xaxis_title="",
@@ -870,7 +881,7 @@ def graphique_evolution_base100_dep(df_vehicules, df_bornes, departement_selecti
 
     fig.update_layout(
         title={
-            'text': f"Évolution comparée des véhicules et bornes électriques dans le département {departement_selectionne}",
+            'text': f"Évolution comparée (base 100) des véhicules et bornes électriques dans le département {departement_selectionne}",
             'font': {'size': 15}
         },
         xaxis_title="",
