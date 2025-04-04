@@ -380,7 +380,7 @@ elif page == "🚗 Voitures électriques":
     }
     </style>
 """, unsafe_allow_html=True)
-    choix_classement = st.radio("Afficher les régions et départements par :", ["Top 10", "Bottom 10"], horizontal=True)
+    choix_classement = st.radio("📊Afficher les régions et départements par :", ["Top 10", "Bottom 10"], horizontal=True)
 
     col_regions, col_departements = st.columns(2)
 
@@ -606,7 +606,10 @@ elif page == "🔌Bornes de recharge":
     }
     </style>
 """, unsafe_allow_html=True)
-            choix_classement = st.radio("", ["Top 10", "Bottom 10"], horizontal=True)
+            choix_classement = st.radio(
+        "📊 Afficher les régions et départements par  :", 
+        ["Top 10", "Bottom 10"], 
+        horizontal=True)
          
         col_choix1, col_choix2 = st.columns(2)   
         with col_choix1: 
@@ -793,9 +796,8 @@ elif page == "🔌Bornes de recharge":
     </style>
 """, unsafe_allow_html=True)
                 
-            choix_classement = st.radio("Classement bornes de recharge :", ["Top 10", "Bottom 10"], horizontal=True)
+            choix_classement = st.radio("📊 Afficher les régions et départements par :", ["Top 10", "Bottom 10"], horizontal=True)
 
-            # Colonnes pour régions et départements
             col_regions, col_departements = st.columns(2)
 
             with col_regions:
@@ -893,7 +895,7 @@ elif page == "🛣️TMJA":
 """, unsafe_allow_html=True)
         niveau_carte = st.radio(
             "",
-            ["Département", "Région"],
+            ["Région", "Département"],
             horizontal=True)
 
     with map_col3:
@@ -1091,7 +1093,7 @@ elif page == "⚡Vehicules par borne":
     </style>
 """, unsafe_allow_html=True)
         choix_classement_vpb = st.radio(
-        "📊 Afficher les départements et régions par nombre de véhicules par borne :", 
+        "📊 Afficher les régions et départements par  :", 
         ["Top 10", "Bottom 10"], 
         horizontal=True
     )
